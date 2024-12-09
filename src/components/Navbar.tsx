@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Menu } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import MobileNavbar from "./MobileNav/MobileNavbar"
 import DesktopNavbar from "./DesktopNav/DesktopNavbar"
@@ -28,20 +28,22 @@ export default function Navbar() {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className={`relative ${
-          scrolled ? ' shadow-lg bg-white/80 backdrop-blur-lg' : 'py-1'
-        } transition-all duration-300`}
+        className={`relative transition-all duration-300 ${
+          scrolled ? 'py-2 shadow-md bg-white/80 backdrop-blur-lg' : 'py-4 bg-transparent'
+        }`}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#b8e6d9] to-[#d8e8f0] opacity-90 -z-10" />
+        <div className={`absolute inset-0 bg-gradient-to-r from-[#b8e6d9]/60 to-[#d8e8f0]/60 transition-opacity duration-300 ${
+          scrolled ? 'opacity-50' : 'opacity-90'
+        } -z-10`} />
 
-        <div className="relative flex items-center justify-between px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/" className="relative z-20 transition-transform hover:scale-105">
             <Image
               src="/images/2.svg"
               alt="GoResa Logo"
-              width={90}
-              height={54}
-              className="object-contain"
+              width={scrolled ? 80 : 100}
+              height={scrolled ? 48 : 60}
+              className="object-contain transition-all duration-300"
             />
           </Link>
 
@@ -51,10 +53,10 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-20 rounded-md p-2 text-gray-700 hover:bg-white/20 md:hidden"
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           </motion.button>
 
-          <DesktopNavbar />
+          <DesktopNavbar scrolled={scrolled} />
 
           <AnimatePresence>
             {isOpen && (

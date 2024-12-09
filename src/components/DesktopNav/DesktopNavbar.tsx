@@ -11,13 +11,13 @@ const products = [
   },
   {
     icon: <Users className="w-5 h-5" />,
-    title: "Product 2",
-    description: "Solution de gestion avancée",
+    title: "Système Web Résa",
+    description: "Solution de gestion des réservations",
   },
   {
     icon: <Boxes className="w-5 h-5" />,
-    title: "Product 3",
-    description: "Optimisez vos processus",
+    title: "App Go Résa",
+    description: "Application mobile de réservation",
   },
 ]
 
@@ -39,19 +39,27 @@ const integrations = [
   },
 ]
 
-const DesktopNavbar: React.FC = () => {
+interface DesktopNavbarProps {
+  scrolled: boolean;
+}
+
+const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ scrolled }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
   return (
-    <div className="hidden md:flex items-center space-x-8">
-      <NavItem title="Produits" items={products} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} />
-      <NavItem title="Intégration" items={integrations} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} />
-      <NavLink href="#" title="À propos" />
-      <NavLink href="#" title="Contactez-nous" />
+    <div className={`hidden md:flex items-center space-x-8 transition-all duration-300 ${
+      scrolled ? 'text-sm' : 'text-base'
+    }`}>
+      <NavItem title="Produits" items={products} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} />
+      <NavItem title="Intégration" items={integrations} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} />
+      <NavLink href="#" title="À propos" scrolled={scrolled} />
+      <NavLink href="#" title="Contactez-nous" scrolled={scrolled} />
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="rounded-xl bg-[#FFBD5A] px-6 py-2.5 font-bold text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md text-lg"
+        className={`rounded-full bg-[#FFBD5A] font-bold text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md ${
+          scrolled ? 'px-4 py-1.5 text-sm' : 'px-6 py-2.5 text-lg'
+        }`}
       >
         Démo Gratuite
       </motion.button>
@@ -64,18 +72,19 @@ interface NavItemProps {
   items: Array<{ icon: JSX.Element; title: string; description: string }>
   hoveredItem: string | null
   setHoveredItem: (item: string | null) => void
+  scrolled: boolean
 }
 
-const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHoveredItem }) => {
+const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHoveredItem, scrolled }) => {
   return (
     <div
       className="relative group"
       onMouseEnter={() => setHoveredItem(title)}
       onMouseLeave={() => setHoveredItem(null)}
     >
-      <button className="flex items-center space-x-1 text-gray-800 hover:text-purple-700 font-bold text-lg group-hover:text-purple-700">
+      <button className={`flex items-center space-x-1 text-gray-800 hover:text-purple-700 font-bold transition-all`}>
         <span>{title}</span>
-        <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
           hoveredItem === title ? 'rotate-180' : ''
         }`} />
       </button>
@@ -86,7 +95,9 @@ const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHovered
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 mt-1 w-72 bg-white rounded-lg shadow-lg"
+            className={`absolute left-0 mt-1 w-72 bg-white rounded-lg shadow-lg ${
+              scrolled ? 'top-6' : 'top-8'
+            }`}
           >
             {/* Dropdown Arrow */}
             <div className="absolute -top-2 left-5 w-4 h-4 bg-white transform rotate-45" />
@@ -97,7 +108,9 @@ const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHovered
                 <Link
                   key={index}
                   href="#"
-                  className="flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className={`flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors ${
+                    scrolled ? 'py-2' : 'py-3'
+                  }`}
                 >
                   <div className="mt-1 p-2.5 rounded-lg bg-purple-50 text-purple-600">
                     {item.icon}
@@ -119,10 +132,11 @@ const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHovered
 interface NavLinkProps {
   href: string
   title: string
+  scrolled: boolean
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, title }) => (
-  <Link href={href} className="text-gray-800 hover:text-purple-700 font-bold text-lg">
+const NavLink: React.FC<NavLinkProps> = ({ href, title, scrolled }) => (
+  <Link href={href} className={`text-gray-800 hover:text-purple-700 font-bold transition-all`}>
     {title}
   </Link>
 )
