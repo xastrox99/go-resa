@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CrmStatsSection from './ProductStatsCards/CrmStatsSection'
-import SystemeWebResa from './ProductStatsCards/SystemWebResa'
+import SystemeWebResa from './ProductStatsCards/SystemeWebResa'
+import AppGoResa from './ProductStatsCards/AppGoResa'
 
 const products = [
   {
@@ -22,12 +23,7 @@ const products = [
     id: 3,
     name: "App Go Resa",
     label: "Application Mobile",
-    component: () => (
-      <div className="p-6 text-center">
-        <h2 className="text-xl font-semibold mb-4">App Go Resa</h2>
-        <p className="text-gray-600">Composant en cours de développement pour l'application mobile Go Resa.</p>
-      </div>
-    ),
+    component: AppGoResa,
   },
   {
     id: 4,

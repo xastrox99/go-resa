@@ -3,6 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { ArrowRight, Info, Briefcase } from 'lucide-react'
 
 const HomeSection = () => {
   return (
@@ -26,8 +27,9 @@ const HomeSection = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center rounded-full bg-purple-100 px-4 py-1.5"
+                className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5"
               >
+                <Briefcase className="w-4 h-4 text-purple-700" />
                 <span className="text-sm font-medium text-purple-700">
                   Solution de Gestion Tout-en-Un
                 </span>
@@ -67,6 +69,7 @@ const HomeSection = () => {
                   className="inline-flex items-center justify-center rounded-xl bg-[#4C206A] px-8 py-3.5 text-lg font-semibold text-white shadow-lg shadow-purple-500/20 transition-all hover:bg-[#3D1956] hover:shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                 >
                   Demander une Démo
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -74,6 +77,7 @@ const HomeSection = () => {
                   className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3.5 text-lg font-semibold text-gray-800 shadow-lg shadow-gray-200/50 transition-all hover:bg-gray-50 hover:shadow-gray-300/50 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2"
                 >
                   En Savoir Plus
+                  <Info className="ml-2 h-5 w-5" />
                 </motion.button>
               </motion.div>
             </motion.div>
