@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Card from "./Card"
 import { PhoneIcon, MessageCircle, Mail, Bell, DollarSign, ArrowRight, TrendingUp, BarChart3, Percent } from 'lucide-react'
@@ -180,14 +181,16 @@ export default function CrmStatsSection() {
           canaux préférés au moment idéal. Grâce à des analyses en temps réel et des outils intuitifs, transformez
           chaque interaction en une opportunité de fidélisation et de croissance.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-2 rounded-lg bg-[#8B5CF6] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#7C3AED]"
-        >
-          En Savoir Plus
-          <ArrowRight className="h-4 w-4" />
-        </motion.button>
+        <Link href="/produits/crm-neo-engage" passHref legacyBehavior>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-lg bg-[#8B5CF6] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#7C3AED]"
+          >
+            En Savoir Plus
+            <ArrowRight className="h-4 w-4" />
+          </motion.button>
+        </Link>
       </motion.div>
     </motion.div>
   )
