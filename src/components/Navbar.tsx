@@ -20,6 +20,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const closeMobileNavbar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50"
@@ -29,7 +33,7 @@ export default function Navbar() {
     >
       <motion.div
         className={`relative transition-all duration-300 ${
-          scrolled ? 'py-2 shadow-md bg-white/80 backdrop-blur-lg' : 'pb-4 bg-transparent'
+          scrolled ? 'pb-2 shadow-md bg-white/80 backdrop-blur-lg' : 'pb-4 bg-transparent'
         }`}
       >
         <div className={`absolute inset-0 bg-gradient-to-r from-[#b8e6d9]/60 to-[#d8e8f0]/60 transition-opacity duration-300 ${
@@ -61,13 +65,13 @@ export default function Navbar() {
           <AnimatePresence>
             {isOpen && (
               <>
-                <MobileNavbar />
+                <MobileNavbar closeMobileNavbar={closeMobileNavbar} />
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="fixed inset-0 bg-black/20 md:hidden"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMobileNavbar} // Use closeMobileNavbar here as well
                   style={{ zIndex: 5 }}
                 />
               </>

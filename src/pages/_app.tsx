@@ -2,11 +2,11 @@
 import "../styles/globals.css"; // Ensure you have global styles
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const MyApp = ({ Component, pageProps }: any) => (
   <>
-    <Navbar />
-
+  <Navbar />
     <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
@@ -20,6 +20,7 @@ const MyApp = ({ Component, pageProps }: any) => (
       />
     </Head>
     <Component {...pageProps} />
+    <Footer />
   </>
 );
 

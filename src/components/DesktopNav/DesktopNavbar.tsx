@@ -8,16 +8,19 @@ const products = [
     icon: <Database className="w-5 h-5" />,
     title: "CRM NEO Engage",
     description: "Gérez vos relations clients efficacement",
+    href: "/produits/crm-neo-engage"
   },
   {
     icon: <Users className="w-5 h-5" />,
     title: "Système Web Résa",
     description: "Solution de gestion des réservations",
+    href: "/produits/systeme-web-resa"
   },
   {
     icon: <Boxes className="w-5 h-5" />,
     title: "App Go Résa",
     description: "Application mobile de réservation",
+    href: "/produits/app-go-resa"
   },
 ]
 
@@ -50,10 +53,10 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ scrolled }) => {
     <div className={`hidden md:flex items-center space-x-8 transition-all duration-300 ${
       scrolled ? 'text-sm' : 'text-base'
     }`}>
-      <NavItem title="Produits" items={products} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} />
-      <NavItem title="Intégration" items={integrations} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} />
-      <NavLink href="#" title="À propos" scrolled={scrolled} />
-      <NavLink href="#" title="Contactez-nous" scrolled={scrolled} />
+      <NavItem title="Produits" items={products} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} href="/produits" />
+      <NavItem title="Intégration" items={integrations} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} href="/integration" />
+      <NavLink href="/a-propos" title="À propos" scrolled={scrolled} />
+      <NavLink href="/contact" title="Contactez-nous" scrolled={scrolled} />
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -69,25 +72,26 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ scrolled }) => {
 
 interface NavItemProps {
   title: string
-  items: Array<{ icon: JSX.Element; title: string; description: string }>
+  items: Array<{ icon: JSX.Element; title: string; description: string; href?: string }>
   hoveredItem: string | null
   setHoveredItem: (item: string | null) => void
   scrolled: boolean
+  href: string
 }
 
-const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHoveredItem, scrolled }) => {
+const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHoveredItem, scrolled, href }) => {
   return (
     <div
       className="relative group"
       onMouseEnter={() => setHoveredItem(title)}
       onMouseLeave={() => setHoveredItem(null)}
     >
-      <button className={`flex items-center space-x-1 text-gray-800 hover:text-purple-700 font-bold transition-all`}>
+      <Link href={href} className={`flex items-center space-x-1 text-gray-800 hover:text-purple-700 font-bold transition-all`}>
         <span>{title}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
           hoveredItem === title ? 'rotate-180' : ''
         }`} />
-      </button>
+      </Link>
       <AnimatePresence>
         {hoveredItem === title && (
           <motion.div
@@ -107,7 +111,7 @@ const NavItem: React.FC<NavItemProps> = ({ title, items, hoveredItem, setHovered
               {items.map((item, index) => (
                 <Link
                   key={index}
-                  href="#"
+                  href={item.href || "#"}
                   className={`flex items-start gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors ${
                     scrolled ? 'py-2' : 'py-3'
                   }`}
