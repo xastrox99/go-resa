@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#' },
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#' },
+  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/goresa' },
+  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/goresa' },
+  { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/goresa' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/goresa' },
 ]
 
 const contactInfo = [
@@ -16,10 +16,36 @@ const contactInfo = [
 ]
 
 const footerLinks = [
-  { title: 'Produits', links: ['CRM NEO Engage', 'Système Web Résa', 'App Go Résa', 'Chatbot Chatbox'] },
-  { title: 'Entreprise', links: ['À propos', 'Partenaires'] },
-  { title: 'Ressources', links: ['Guides', 'Support'] },
-  { title: 'Légal', links: ['Conditions d\'utilisation', 'Politique de confidentialité'] },
+  { 
+    title: 'Produits', 
+    links: [
+      { text: 'CRM NEO Engage', href: '/produits/crm-neo-engage' },
+      { text: 'Système Web Résa', href: '/produits/systeme-web-resa' },
+      { text: 'App Go Résa', href: '/produits/app-go-resa' },
+      { text: 'Chatbot Chatbox', href: '/produits/chatbot-chatbox' }
+    ]
+  },
+  { 
+    title: 'Entreprise', 
+    links: [
+      { text: 'À propos', href: '/a-propos' },
+      { text: 'Partenaires', href: '/integration/partner-network' }
+    ]
+  },
+  { 
+    title: 'Ressources', 
+    links: [
+      { text: 'Guides', href: '/ressources/guides' },
+      { text: 'Support', href: '/contact' }
+    ]
+  },
+  { 
+    title: 'Légal', 
+    links: [
+      { text: 'Conditions d\'utilisation', href: '/legal/conditions-utilisation' },
+      { text: 'Politique de confidentialité', href: '/legal/politique-confidentialite' }
+    ]
+  },
 ]
 
 export default function Footer() {
@@ -58,9 +84,9 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">{column.title}</h3>
               <ul className="mt-4 space-y-4">
                 {column.links.map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-base text-gray-600 hover:text-[#4C206A]">
-                      {link}
+                  <li key={link.text}>
+                    <Link href={link.href} className="text-base text-gray-600 hover:text-[#4C206A]">
+                      {link.text}
                     </Link>
                   </li>
                 ))}
@@ -89,3 +115,4 @@ export default function Footer() {
     </footer>
   )
 }
+

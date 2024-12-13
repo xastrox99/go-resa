@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Database, Users, Boxes, Workflow, GitBranch, Network } from 'lucide-react'
+import { ChevronDown, Database, Users, Boxes, Workflow, GitBranch, Network, MessageSquare } from 'lucide-react'
 
 const products = [
   {
@@ -22,25 +22,34 @@ const products = [
     description: "Application mobile de réservation",
     href: "/produits/app-go-resa"
   },
-]
+  {
+    icon: <MessageSquare className="w-5 h-5" />,
+    title: "Chatbot Chatbox",
+    description: "Assistant virtuel intelligent",
+    href: "/produits/chatbot-chatbox"
+  },
+];
 
 const integrations = [
   {
     icon: <Workflow className="w-5 h-5" />,
     title: "API Integration",
     description: "Connectez vos systèmes",
+    href: "/integration/api" // Added href
   },
   {
     icon: <GitBranch className="w-5 h-5" />,
     title: "Custom Solutions",
     description: "Solutions sur mesure",
+    href: "/integration/custom-solutions" // Added href
   },
   {
     icon: <Network className="w-5 h-5" />,
     title: "Partner Network",
     description: "Rejoignez notre réseau",
+    href: "/integration/partner-network" // Added href
   },
-]
+];
 
 interface DesktopNavbarProps {
   scrolled: boolean;

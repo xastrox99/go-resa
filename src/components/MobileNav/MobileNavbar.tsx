@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Database, Users, Boxes, Workflow, GitBranch, Network } from 'lucide-react';
+import { ChevronDown, Database, Users, Boxes, Workflow, GitBranch, Network, MessageSquare } from 'lucide-react';
 
 interface MobileNavbarProps {
   closeMobileNavbar: () => void;
@@ -28,6 +28,12 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
       description: "Optimisez vos processus",
       href: "/produits/app-go-resa",
     },
+    {
+      icon: <MessageSquare className="w-5 h-5" />,
+      title: "Chatbot Chatbox",
+      description: "Assistant virtuel intelligent",
+      href: "/produits/chatbot-chatbox",
+    },
   ];
 
   const integrations = [
@@ -35,19 +41,19 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
       icon: <Workflow className="w-5 h-5" />,
       title: "API Integration",
       description: "Connectez vos systèmes",
-      href: "#",
+      href: "/integration/api", // Added href
     },
     {
       icon: <GitBranch className="w-5 h-5" />,
       title: "Custom Solutions",
       description: "Solutions sur mesure",
-      href: "#",
+      href: "/integration/custom-solutions", // Added href
     },
     {
       icon: <Network className="w-5 h-5" />,
       title: "Partner Network",
       description: "Rejoignez notre réseau",
-      href: "#",
+      href: "/integration/partner-network", // Added href
     },
   ];
 
@@ -73,7 +79,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
                 <Link
                   key={index}
                   href={product.href || "#"}
-                  onClick={closeMobileNavbar} // Added onClick handler
+                  onClick={closeMobileNavbar} 
                   className="flex items-start gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors"
                 >
                   <div className="mt-1 p-2 rounded-lg bg-purple-100 text-purple-700">
@@ -104,7 +110,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
                 <Link
                   key={index}
                   href={integration.href || "#"}
-                  onClick={closeMobileNavbar} // Added onClick handler
+                  onClick={closeMobileNavbar} 
                   className="flex items-start gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors"
                 >
                   <div className="mt-1 p-2 rounded-lg bg-purple-100 text-purple-700">
@@ -122,14 +128,14 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
 
         <Link
           href="/a-propos"
-          onClick={closeMobileNavbar} // Added onClick handler
+          onClick={closeMobileNavbar} 
           className="text-2xl font-semibold text-black hover:text-purple-700 pb-4 border-b border-gray-200"
         >
           À propos
         </Link>
         <Link
           href="/contact"
-          onClick={closeMobileNavbar} // Added onClick handler
+          onClick={closeMobileNavbar} 
           className="text-2xl font-semibold text-black hover:text-purple-700 pb-4 border-b border-gray-200"
         >
           Contactez-nous
