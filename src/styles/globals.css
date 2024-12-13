@@ -39,3 +39,57 @@ body {
   animation: spin-slow 8s linear infinite;
 }
 
+.demo-calendar-popper {
+  z-index: 50;
+  width: 100%;
+  max-width: 320px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.demo-calendar {
+  @apply bg-white rounded-lg shadow-lg border border-gray-200 font-sans;
+}
+
+.demo-calendar .react-datepicker__header {
+  @apply bg-[#4C206A] text-white border-none rounded-t-lg;
+}
+
+.demo-calendar .react-datepicker__current-month {
+  @apply text-white font-semibold py-2;
+}
+
+.demo-calendar .react-datepicker__day-name {
+  @apply text-white font-medium w-8 h-8 leading-8;
+}
+
+.demo-calendar .react-datepicker__day {
+  @apply w-8 h-8 leading-8 rounded-full hover:bg-purple-100 hover:text-[#4C206A] transition-colors;
+}
+
+.demo-calendar .react-datepicker__day--selected {
+  @apply bg-[#4C206A] text-white hover:bg-[#3D1956] hover:text-white;
+}
+
+.demo-calendar .react-datepicker__day--disabled {
+  @apply text-gray-300 hover:bg-transparent cursor-not-allowed;
+}
+
+.demo-calendar .react-datepicker__navigation {
+  @apply top-3;
+}
+
+.demo-calendar .react-datepicker__navigation-icon::before {
+  @apply border-white;
+}
+
+.demo-calendar .react-datepicker__day--keyboard-selected {
+  @apply bg-purple-100 text-[#4C206A];
+}
+
+.demo-calendar .react-datepicker__triangle {
+  @apply hidden;
+}
+

@@ -3,71 +3,59 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Code, ExternalLink, RefreshCw, Sparkles, Zap, CheckCircle, Lock } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, CheckCircle, Globe, Users, Handshake, TrendingUp } from 'lucide-react';
 import DemoSection from '@/components/DemoSection';
-import {Card} from '@/components/ui/card';
+import {Card} from '@/components/ui/card'; // Import the Card component
 
 const features = [
   {
-    title: "API RESTful",
-    description: "Une API RESTful moderne avec documentation OpenAPI pour une intégration facile et rapide. Profitez d'endpoints intuitifs et d'une structure cohérente pour tous vos besoins de réservation.",
-    icon: Code,
-    benefits: ["Architecture RESTful", "Documentation OpenAPI", "Endpoints intuitifs"]
+    title: "Réseau international",
+    description: "Accédez à un réseau mondial de partenaires et d'opportunités commerciales.",
+    icon: Globe,
+    benefits: ["Présence mondiale", "Opportunités transfrontalières", "Partage d'expertise"]
   },
   {
-    title: "Webhooks",
-    description: "Recevez des notifications en temps réel sur les événements importants. Configurez facilement des webhooks pour être informé des nouvelles réservations, modifications ou annulations.",
-    icon: Zap,
-    benefits: ["Notifications en temps réel", "Configuration facile", "Synchronisation instantanée"]
+    title: "Support dédié",
+    description: "Bénéficiez d'un support technique et commercial personnalisé pour votre réussite.",
+    icon: Users,
+    benefits: ["Assistance 24/7", "Ressources exclusives", "Conseils stratégiques"]
   },
   {
-    title: "Documentation complète",
-    description: "Une documentation exhaustive et détaillée pour vous guider à chaque étape de l'intégration. Accédez à des guides, des exemples de code et un support technique dédié.",
-    icon: ExternalLink,
-    benefits: ["Guides d'intégration", "Exemples de code", "Support technique"]
+    title: "Formations exclusives",
+    description: "Participez à des formations avancées pour maîtriser nos solutions et développer vos compétences.",
+    icon: Sparkles,
+    benefits: ["Webinaires experts", "Certifications", "Ateliers pratiques"]
   },
   {
-    title: "SDKs multilingues",
-    description: "Simplifiez le développement avec nos SDKs disponibles pour plusieurs langages de programmation. Intégrez facilement GoRésa dans vos applications existantes.",
-    icon: Code,
-    benefits: ["Python, JavaScript, PHP, Java", "Intégration rapide", "Maintenance simplifiée"]
+    title: "Croissance accélérée",
+    description: "Boostez votre croissance grâce à notre programme de partenariat structuré et nos outils marketing.",
+    icon: TrendingUp,
+    benefits: ["Leads qualifiés", "Outils marketing", "Incentives attractifs"]
   },
-  {
-    title: "Authentification sécurisée",
-    description: "Protégez vos données et celles de vos clients avec notre système d'authentification OAuth2 robuste, conforme aux normes de l'industrie.",
-    icon: Lock,
-    benefits: ["OAuth2", "Sécurité renforcée", "Conformité aux normes"]
-  },
-  {
-    title: "Rate Limiting intelligent",
-    description: "Profitez d'un contrôle intelligent du taux de requêtes pour une utilisation équitable et optimale de l'API, assurant stabilité et disponibilité pour tous les utilisateurs.",
-    icon: RefreshCw,
-    benefits: ["Utilisation équitable", "Stabilité assurée", "Haute disponibilité"]
-  }
 ];
 
 const stats = [
   {
-    value: "10M+",
-    label: "Appels API par mois",
-    icon: RefreshCw,
-    color: "text-green-500"
-  },
-  {
-    value: "99.99%",
-    label: "Taux de disponibilité",
-    icon: CheckCircle,
+    value: "500+",
+    label: "Partenaires actifs",
+    icon: Handshake,
     color: "text-blue-500"
   },
   {
-    value: "24/7",
-    label: "Support technique",
-    icon: Zap,
+    value: "50+",
+    label: "Pays représentés",
+    icon: Globe,
+    color: "text-green-500"
+  },
+  {
+    value: "30%",
+    label: "Croissance annuelle du réseau",
+    icon: TrendingUp,
     color: "text-purple-500"
   }
 ];
 
-export default function ApiIntegrationPage() {
+export default function PartnerNetworkPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -93,9 +81,9 @@ export default function ApiIntegrationPage() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                   className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5"
                 >
-                  <Code className="w-4 h-4 text-purple-700" />
+                  <Handshake className="w-4 h-4 text-purple-700" />
                   <span className="text-sm font-medium text-purple-700">
-                    Intégration API Puissante
+                    Réseau de Partenaires
                   </span>
                 </motion.div>
                 
@@ -106,7 +94,7 @@ export default function ApiIntegrationPage() {
                   transition={{ delay: 0.3, duration: 0.5 }}
                   className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
                 >
-                  API GoRésa : Intégrez la puissance de la réservation
+                  Rejoignez le Réseau de Partenaires GoRésa
                 </motion.h1>
                 
                 {/* Description */}
@@ -116,8 +104,9 @@ export default function ApiIntegrationPage() {
                   transition={{ delay: 0.4, duration: 0.5 }}
                   className="text-base sm:text-lg leading-relaxed text-gray-600"
                 >
-                  Exploitez notre API robuste pour intégrer les fonctionnalités de réservation de GoRésa directement dans vos applications. 
-                  Simplifiez vos processus, améliorez l'expérience utilisateur et boostez votre efficacité avec une intégration fluide et puissante.
+                  Devenez partenaire de GoRésa et accédez à un monde d'opportunités. Notre réseau de partenaires 
+                  bénéficie d'un support dédié, de formations exclusives et d'outils marketing pour développer votre activité. 
+                  Ensemble, créons des solutions innovantes pour nos clients.
                 </motion.p>
 
                 {/* Stats */}
@@ -160,7 +149,7 @@ export default function ApiIntegrationPage() {
                     }}
                     className="inline-flex items-center justify-center rounded-xl bg-[#4C206A] px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-lg shadow-purple-500/20 transition-all hover:bg-[#3D1956] hover:shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                   >
-                    Commencer l'intégration
+                    Devenir partenaire
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </motion.button>
                 </motion.div>
@@ -178,8 +167,8 @@ export default function ApiIntegrationPage() {
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-100 to-blue-100 opacity-50 blur-2xl" />
                   
                   <Image
-                    src="/images/api.png"
-                    alt="API Integration Illustration"
+                    src="/images/partner.png"
+                    alt="Partner Network Illustration"
                     width={600}
                     height={400}
                     className="relative w-full h-auto rounded-2xl"
@@ -197,51 +186,51 @@ export default function ApiIntegrationPage() {
 
       {/* Features Section */}
       <section className="relative py-20 overflow-hidden bg-white">
-  <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white opacity-70" />
-  <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-900"
-    >
-      Fonctionnalités Clés de l'API
-    </motion.h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {features.map((feature, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 + index * 0.1 }}
-          className="group"
-        >
-          <Card className="h-full overflow-hidden bg-gradient-to-br from-purple-50 to-white border-none shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="p-6 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="p-2.5 bg-purple-100 rounded-xl group-hover:bg-purple-200 transition-colors duration-300">
-                  <feature.icon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {feature.benefits.map((benefit, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center rounded-full bg-purple-50 px-2.5 py-0.5 text-xs font-medium text-purple-700"
-                  >
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white opacity-70" />
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-900"
+          >
+            Avantages du Programme Partenaires
+          </motion.h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="group"
+              >
+                <Card className="h-full overflow-hidden bg-gradient-to-br from-purple-50 to-white border-none shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="p-2.5 bg-purple-100 rounded-xl group-hover:bg-purple-200 transition-colors duration-300">
+                        <feature.icon className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {feature.benefits.map((benefit, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center rounded-full bg-purple-50 px-2.5 py-0.5 text-xs font-medium text-purple-700"
+                        >
+                          {benefit}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Demo Form Section */}
       <div id="demo-section">
