@@ -42,7 +42,7 @@ export default function ProductShowcase() {
   const [currentProductIndex, setCurrentProductIndex] = useState(0)
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-16">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white pb-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">

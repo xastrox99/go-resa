@@ -1,60 +1,81 @@
-"use client"
+"use client";
 
-import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, User, Mail, Building, Phone, BarChart, Users, MessageCircle, PieChart, Star, BarChartIcon as ChartBar, Zap, Sparkles } from 'lucide-react';
-import DemoSection from '../../components/DemoSection';
+import {
+  ArrowRight,
+  Calendar,
+  CheckCircle,
+  Clock,
+  Users,
+  Sparkles,
+  Star,
+} from "lucide-react";
+import DemoSection from "@/components/DemoSection";
 
 const features = [
   {
-    title: "Segmentation client précise",
-    description: "Ciblez vos clients avec précision grâce à des filtres avancés et une segmentation dynamique basée sur le comportement",
+    title: "Gestion des réservations en temps réel",
+    description:
+      "Visualisez et gérez toutes vos réservations en temps réel, optimisant ainsi la gestion de votre espace et le service client.",
+    icon: Calendar,
+    benefits: [
+      "Vue d'ensemble en temps réel",
+      "Gestion des tables",
+      "Notifications instantanées",
+    ],
+  },
+  {
+    title: "Optimisation du taux de remplissage",
+    description:
+      "Maximisez votre taux de remplissage grâce à une gestion efficace des réservations et des tables.",
+    icon: CheckCircle,
+    benefits: [
+      "Planification optimisée",
+      "Réduction des temps d'attente",
+      "Augmentation des revenus",
+    ],
+  },
+  {
+    title: "Interface intuitive et facile à utiliser",
+    description:
+      "Une interface utilisateur simple et intuitive pour une gestion des réservations sans tracas.",
+    icon: Clock,
+    benefits: [
+      "Navigation facile",
+      "Fonctionnalités claires",
+      "Prise en main rapide",
+    ],
+  },
+  {
+    title: "Statistiques et rapports détaillés",
+    description:
+      "Accédez à des statistiques et des rapports détaillés pour suivre vos performances et prendre des décisions éclairées.",
     icon: Users,
-    benefits: ["Filtres personnalisables", "Segments dynamiques", "Profils détaillés"]
-  },
-  {
-    title: "Communication multicanale intégrée",
-    description: "Gérez tous vos canaux de communication depuis une seule interface unifiée et centralisée",
-    icon: MessageCircle,
-    benefits: ["Email, SMS, WhatsApp", "Messages personnalisés", "Réponses automatiques"]
-  },
-  {
-    title: "Analyses en temps réel",
-    description: "Suivez vos performances marketing en direct avec des tableaux de bord interactifs et des rapports détaillés",
-    icon: BarChart,
-    benefits: ["Tableaux de bord en direct", "Rapports personnalisés", "KPIs avancés"]
-  },
-  {
-    title: "Automatisation marketing",
-    description: "Automatisez vos campagnes pour plus d'efficacité et une meilleure conversion client",
-    icon: PieChart,
-    benefits: ["Workflows automatisés", "Triggers intelligents", "A/B Testing"]
+    benefits: [
+      "Analyse des données",
+      "Rapports personnalisés",
+      "Suivi des performances",
+    ],
   },
 ];
 
 const stats = [
   {
-    value: "85%",
+    value: "95%",
     label: "Taux de satisfaction client",
     icon: Star,
-    color: "text-yellow-500"
+    color: "text-yellow-500",
   },
   {
-    value: "+45%",
-    label: "Augmentation des conversions",
-    icon: ChartBar,
-    color: "text-green-500"
+    value: "1000+",
+    label: "Réservations par mois",
+    icon: Calendar,
+    color: "text-green-500",
   },
-  {
-    value: "24/7",
-    label: "Support client disponible",
-    icon: Zap,
-    color: "text-purple-500"
-  }
 ];
 
-export default function CrmNeoEngagePage() {
+export default function SystemeWebResaPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -62,59 +83,34 @@ export default function CrmNeoEngagePage() {
         {/* Gradient background with improved opacity and blur */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#b8e6d9]/40 via-[#d8e8f0]/40 to-white/80 backdrop-blur-[100px] -z-10" />
 
-        {/* Content container with improved padding and max-width */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-10">
-          <div className="pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-30 lg:pb-32"> {/* Adjusted padding values */}
+          <div className="pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-30 lg:pb-32">
             <div className="flex flex-col-reverse gap-16 lg:flex-row lg:items-center lg:gap-24">
               {/* Left content */}
-              <motion.div 
+              <motion.div
                 className="flex-1 order-2 lg:order-1 space-y-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Label */}
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                  className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5"
-                >
+                <div className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5">
                   <Sparkles className="w-4 h-4 text-purple-700" />
                   <span className="text-sm font-medium text-purple-700">
-                    Solution CRM Innovante
+                    Solution de réservation intuitive
                   </span>
-                </motion.div>
-                
-                {/* Heading */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
-                >
-                  CRM NEO Engage
-                </motion.h1>
-                
-                {/* Description */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                  className="text-base sm:text-lg leading-relaxed text-gray-600"
-                >
-                  Optimisez vos campagnes marketing avec CRM NEO Engage. Notre solution offre une segmentation avancée, 
-                  une communication multicanale, et des analyses en temps réel pour des interactions client 
-                  plus efficaces et personnalisées.
-                </motion.p>
+                </div>
+                <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+                  Système Web Résa
+                </h1>
 
-                {/* Stats */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  className="flex flex-wrap gap-4"
-                >
+                <p className="text-base sm:text-lg leading-relaxed text-gray-600">
+                  Gérez vos réservations efficacement avec notre système
+                  intuitif. Optimisez votre taux de remplissage, évitez les
+                  doubles réservations et offrez une expérience de réservation
+                  fluide à vos clients.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
                   {stats.map((stat, index) => (
                     <motion.div
                       key={index}
@@ -127,14 +123,17 @@ export default function CrmNeoEngagePage() {
                         <stat.icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-lg font-bold text-gray-900">{stat.value}</div>
-                        <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                        <div className="text-lg font-bold text-gray-900">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-600">
+                          {stat.label}
+                        </div>
                       </div>
                     </motion.div>
                   ))}
-                </motion.div>
+                </div>
 
-                {/* Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -144,7 +143,9 @@ export default function CrmNeoEngagePage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => {
-                      document.getElementById('demo-section')?.scrollIntoView({ behavior: 'smooth' });
+                      document
+                        .getElementById("demo-section")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="inline-flex items-center justify-center rounded-xl bg-[#4C206A] px-6 py-3 text-base sm:text-lg font-semibold text-white shadow-lg shadow-purple-500/20 transition-all hover:bg-[#3D1956] hover:shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                   >
@@ -164,10 +165,10 @@ export default function CrmNeoEngagePage() {
                 <div className="relative">
                   {/* Decorative blur effect */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-100 to-blue-100 opacity-50 blur-2xl" />
-                  
+
                   <Image
-                    src="/images/crm.webp"
-                    alt="CRM Dashboard on laptop with analytics and user profiles"
+                    src="/images/resa-pos.png"
+                    alt="Système Web Résa Illustration"
                     width={600}
                     height={400}
                     className="relative w-full h-auto rounded-2xl"
@@ -209,8 +210,12 @@ export default function CrmNeoEngagePage() {
                     <feature.icon className="w-6 h-6 text-purple-600" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{feature.title}</h3>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {feature.description}
+                    </p>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {feature.benefits.map((benefit, idx) => (
                         <span
@@ -236,4 +241,3 @@ export default function CrmNeoEngagePage() {
     </main>
   );
 }
-

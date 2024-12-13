@@ -33,7 +33,7 @@ export default function Navbar() {
     >
       <motion.div
         className={`relative transition-all duration-300 ${
-          scrolled ? 'pb-2 shadow-md bg-white/80 backdrop-blur-lg' : 'pb-4 bg-transparent'
+          scrolled ? 'pb-2 shadow-md bg-white/80 backdrop-blur-lg' : ' bg-transparent'
         }`}
       >
         <div className={`absolute inset-0 bg-gradient-to-r from-[#b8e6d9]/60 to-[#d8e8f0]/60 transition-opacity duration-300 ${

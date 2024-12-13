@@ -13,8 +13,9 @@ export default function Home() {
       <ProductShowcase />
       <IntegrationSection />
       <BenefitsAndPartnersSection />
-      <DemoSection />
-      
+      <div id="demo-section">
+        <DemoSection />
+      </div>
     </div>
   );
 }
