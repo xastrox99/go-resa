@@ -81,7 +81,7 @@ export default function AppGoResa() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-600">Téléchargements</p>
-                  <p className="text-2xl font-bold text-gray-900">10,000+</p>
+                  <p className="text-2xl font-bold text-gray-900">5,000+</p>
                 </div>
               </div>
             </Card>
@@ -93,7 +93,7 @@ export default function AppGoResa() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-600">Utilisateurs actifs</p>
-                  <p className="text-2xl font-bold text-gray-900">5,000+</p>
+                  <p className="text-2xl font-bold text-gray-900">2,000+</p>
                 </div>
               </div>
             </Card>
@@ -108,7 +108,7 @@ export default function AppGoResa() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-600">Note moyenne</p>
-                  <p className="text-2xl font-bold text-gray-900">4.8/5</p>
+                  <p className="text-2xl font-bold text-gray-900">4.7/5</p>
                 </div>
               </div>
               <div className="flex gap-1">
