@@ -29,7 +29,7 @@ secondaryIcons: [Zap, RefreshCw, ExternalLink],
 title: "Solutions personnalisées",
 description: "Besoin d'une solution sur mesure ? Notre équipe d'experts peut vous aider à développer des intégrations personnalisées pour répondre à vos besoins spécifiques.",
 icon: GitBranch,
-href: "#", // Replace with actual link
+href: "integration/custom-solutions", // Replace with actual link
 features: [
 "Développement sur mesure",
 "Intégration transparente",
@@ -47,7 +47,7 @@ secondaryIcons: [Puzzle, Users, CheckCircle],
 title: "Réseau de partenaires",
 description: "Rejoignez notre réseau de partenaires et collaborez avec des experts pour étendre les fonctionnalités de GoResa et offrir des solutions complètes à vos clients.",
 icon: Network,
-href: "#", // Replace with actual link
+href: "integration/partner-network", // Replace with actual link
 features: [
 "Collaboration étroite",
 "Opportunités commerciales",

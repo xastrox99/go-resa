@@ -25,18 +25,12 @@ const footerLinks = [
       { text: 'Chatbot Chatbox', href: '/produits/chatbot-chatbox' }
     ]
   },
-  { 
-    title: 'Entreprise', 
+  {
+    title: 'Intégrations',
     links: [
-      { text: 'À propos', href: '/a-propos' },
-      { text: 'Partenaires', href: '/integration/partner-network' }
-    ]
-  },
-  { 
-    title: 'Ressources', 
-    links: [
-      { text: 'Guides', href: '/ressources/guides' },
-      { text: 'Support', href: '/contact' }
+      { text: 'API Integration', href: '/integration/api' },
+      { text: 'Custom Solutions', href: '/integration/custom-solutions' },
+      { text: 'Partner Network', href: '/integration/partner-network' }
     ]
   },
   { 

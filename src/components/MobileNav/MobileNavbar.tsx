@@ -140,9 +140,13 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeMobileNavbar }) => {
         >
           Contactez-nous
         </Link>
-        <button onClick={closeMobileNavbar} className="mt-10 w-full rounded-xl bg-[#FFBD5A] px-6 py-2 font-semibold text-xl text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md active:transform active:scale-95">
+        <Link
+          href="/demo-gratuite"
+          onClick={closeMobileNavbar}
+          className="mt-10 block w-full rounded-xl bg-[#FFBD5A] px-6 py-2 font-semibold text-xl text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md active:transform active:scale-95 text-center"
+        >
           Démo Gratuite
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import CrmStatsSection from './ProductStatsCards/CrmStatsSection'
 import SystemeWebResa from './ProductStatsCards/SystemeWebResa'
 import AppGoResa from './ProductStatsCards/AppGoResa'
+import ChatbotChatbox from './ProductStatsCards/ChatbotChatbox'
 
 const products = [
   {
@@ -29,12 +30,7 @@ const products = [
     id: 4,
     name: "Chatbot Chatbox",
     label: "Assistant Virtuel",
-    component: () => (
-      <div className="p-6 text-center">
-        <h2 className="text-xl font-semibold mb-4">Chatbot Chatbox</h2>
-        <p className="text-gray-600">Composant en cours de développement pour l'assistant virtuel Chatbot Chatbox.</p>
-      </div>
-    ),
+    component: ChatbotChatbox,
   },
 ]
 

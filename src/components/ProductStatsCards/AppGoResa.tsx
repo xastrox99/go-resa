@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Bell, Wallet, Info, Download, Users, Star } from 'lucide-react'
 import Card from "./Card"
+import Link from 'next/link'
 
 const features = [
   {
@@ -118,14 +119,16 @@ export default function AppGoResa() {
             </div>
           </Card>
 
+          <Link href="/produits/app-go-resa" passHref legacyBehavior>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#8B5CF6] px-6 py-3 text-base font-medium text-white transition-all hover:bg-[#7C3AED]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#8B5CF6] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#7C3AED]"
           >
             En Savoir Plus
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="h-4 w-4" />
           </motion.button>
+        </Link>
         </motion.div>
       </div>
     </div>

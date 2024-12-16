@@ -3,6 +3,7 @@
 import { Star, Users, Calendar, Clock, Table2, Crown, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Card from "./Card"
+import Link from 'next/link'
 
 const tables = [
   { id: 'T1', capacity: '4P', status: 'available' },
@@ -47,6 +48,7 @@ export default function SystemeWebResa() {
               les réservations en ligne et au téléphone.
             </p>
           </div>
+          <Link href="/produits/systeme-web-resa" passHref legacyBehavior>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -55,6 +57,7 @@ export default function SystemeWebResa() {
             En Savoir Plus
             <ArrowRight className="h-4 w-4" />
           </motion.button>
+        </Link>
         </motion.div>
 
         {/* Stats Section - Right column */}

@@ -66,15 +66,17 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ scrolled }) => {
       <NavItem title="Intégration" items={integrations} hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} scrolled={scrolled} href="/integration" />
       <NavLink href="/a-propos" title="À propos" scrolled={scrolled} />
       <NavLink href="/contact" title="Contactez-nous" scrolled={scrolled} />
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className={`rounded-full bg-[#FFBD5A] font-bold text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md ${
-          scrolled ? 'px-4 py-1.5 text-sm' : 'px-6 py-2.5 text-lg'
-        }`}
-      >
-        Démo Gratuite
-      </motion.button>
+      <Link href="/demo-gratuite">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`rounded-full bg-[#FFBD5A] font-bold text-gray-800 shadow-sm transition-all hover:bg-[#E5A94F] hover:shadow-md ${
+            scrolled ? 'px-4 py-1.5 text-sm' : 'px-6 py-2.5 text-lg'
+          }`}
+        >
+          Démo Gratuite
+        </motion.button>
+      </Link>
     </div>
   )
 }
